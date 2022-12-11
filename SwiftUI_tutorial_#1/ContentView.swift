@@ -19,29 +19,32 @@ struct ContentView: View {
 				MyVstackVeiw()
 				MyVstackVeiw()
 				MyVstackVeiw()
-			}
-			.padding(isActivated ? 50 : 10)
-			.background(isActivated ? Color.yellow : Color.black) // 3항연산
-			.onTapGesture {
-				print("클릭되었따.")
-				// animation
-				withAnimation {
-					self.isActivated.toggle() // 클릭시마다 @State로 인해서 감지
-				}
-			}
-			// 네비게이션 버튼
-			NavigationLink(destination: MyTextVeiw()) { // 다음화면 destination지정
-				Text("네비게이션")
-					.font(.system(size:40))
-					.fontWeight(.bold)
-					.padding()
-					.background(Color.orange)
-					.foregroundColor(Color.white)
-					.cornerRadius(30)
-			} .padding(.top, 10)
-		} // navigatioView
-	} // body
-}
+			} // Hstack
+					.padding(isActivated ? 50 : 10)
+					.background(isActivated ? Color.yellow : Color.black) // 3항연산
+				
+					.onTapGesture {
+						print("클릭되었따.")
+						// animation
+						withAnimation {
+							self.isActivated.toggle() // 클릭시마다 @State로 인해서 감지
+						}
+					}
+			
+				// 네비게이션 버튼
+				NavigationLink(destination: MyTextVeiw()) { // 다음화면 destination지정
+					Text("네비게이션")
+						.font(.system(size:40))
+						.fontWeight(.bold)
+						.padding()
+						.background(Color.orange)
+						.foregroundColor(Color.white)
+						.cornerRadius(30)
+					
+				}.padding(.top, 10)
+		}
+	}
+} 
 
 
 
